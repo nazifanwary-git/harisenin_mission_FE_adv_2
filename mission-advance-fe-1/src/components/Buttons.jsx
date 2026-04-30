@@ -54,6 +54,7 @@ export default function Buttons({
         font-dm-sans p-1.5 sm:p-2.5 rounded-lg
         ${className}
         `}
+            type={type}
             {...props}
         >
             {btnStyle === "google" ? (

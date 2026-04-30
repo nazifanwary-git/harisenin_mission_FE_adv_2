@@ -1,4 +1,4 @@
-import FlagIndo from '../assets/Indonesia (ID).png'
+import FlagIndo from '../../assets/Indonesia (ID).png'
 import { ChevronDown } from 'lucide-react';
 
 export default function PhoneSelector() {
@@ -9,17 +9,17 @@ export default function PhoneSelector() {
         max-w-[156.67px]
         border border-solid
         rounded-lg
-        border-gray-400
+        border-black/20
         ">
             <div className="
                 flex
                 justify-center
                 items-center
-                w-11
-                h-11
-                border-r border-gray-400
+                border-r border-black/20
                 bg-gray-100
                 rounded-l-lg
+                px-2.5
+                py-3
                 ">
                 <img src={FlagIndo} alt="Indonesian Flag" className='w-6 h-6' />
             </div>

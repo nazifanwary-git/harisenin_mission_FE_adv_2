@@ -6,10 +6,14 @@ export default function InputForm({
     className = "",
     inputType = "text",
     label,
+    name,
+    id,
     required = false,
     placeholder,
     ...props
 }) {
+
+    const inputId = id || name;
 
     const types = {
         text: "text",
@@ -28,32 +32,38 @@ export default function InputForm({
         resolveType = types[inputType] || "text"
     };
 
-    const isPhone = inputType === "tel";
+    const isPhone = inputType === "phone";
 
     return (
-        <div className="flex flex-col gap-1">
-            {label && (<label className="text-gray-800 font-medium font-lato">
-                {label} {required && <span className="text-red-600">*</span>}
+        <div className="flex flex-col w-full items-start gap-1">
+            {label && (<label htmlFor={inputId} className="text-sm font-DMSans text-black/70 sm:text-base">
+                {label} {required && (<span className="text-red-600 text-base font-normal">*</span>)}
             </label>)}
 
             {isPhone ? (
-                <div className="flex gap-3 sm:gap-6">
+                <div className="flex gap-2 w-full">
                     <PhoneSelector />
 
                     <input
-                        {...props}
                         type={resolveType}
-                        className={`w-full border rounded-md px-3 py-2 pr-10 border-gray-400 ${className}`}
+                        className={`flex-1 border border-black/20 rounded-md py-3 px-2.5 text-sm font-DMSans sm:text-base ${className}`}
                         placeholder={placeholder}
+                        id={inputId}
+                        name={name}
+                        required={required}
+                        {...props}
                     />
                 </div>
             ) : (
-                <div className="relative">
+                <div className="relative w-full">
                     <input
-                        {...props}
                         type={resolveType}
-                        className={`w-full border rounded-md px-3 py-2 border-gray-400 ${className}`}
+                        className={`w-full border border-black/20 rounded-md py-3 px-2.5 text-sm font-DMSans sm:text-base ${className}`}
                         placeholder={placeholder}
+                        id={inputId}
+                        name={name}
+                        required={required}
+                        {...props}
                     />
 
                     {inputType === "password" && (

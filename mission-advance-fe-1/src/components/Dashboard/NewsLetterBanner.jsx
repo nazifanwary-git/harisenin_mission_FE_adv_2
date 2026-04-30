@@ -1,6 +1,6 @@
 import NewsLetterBgImage from "../../assets/newsLetterBanner.jpg"
 import Buttons from "../Buttons"
-import InputForm from "../InputForm"
+import InputForm from "../Authentication/InputForm"
 
 export default function NewsLetterBanner() {
     return (
